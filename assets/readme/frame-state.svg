@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" role="img" aria-labelledby="fsTitle fsDesc">
+  <title id="fsTitle">物理帧状态快照</title>
+  <desc id="fsDesc">FIFO 策略下引用串 1 2 3 4 2 1 5、3 帧内存的逐时刻物理帧快照。蓝色为新调入，赤色为因淘汰而装入，t=5 命中页面 2。</desc>
+
+  <defs>
+    <linearGradient id="fsHit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5B9BD5" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#5B9BD5" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="fsEvict" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="fsIdle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDEAE0" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#EDEAE0" stop-opacity="0.01"/>
+    </linearGradient>
+    <linearGradient id="fsRes" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDEAE0" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#EDEAE0" stop-opacity="0.02"/>
+    </linearGradient>
+    <symbol id="fsMHit" viewBox="0 0 14 14">
+      <path d="M 3 7.5 L 5.5 10 L 11 4" stroke="#5B9BD5" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="fsMEvict" viewBox="0 0 14 14">
+      <path d="M 4 4 L 10 10 M 10 4 L 4 10" stroke="#D97757" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="320" rx="20" fill="#111827"/>
+
+  <g transform="translate(48 30)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision">
+    <text x="0" y="12" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="1.5" fill="#6B7280">FRAME STATE · FIFO</text>
+    <line x1="0" y1="20" x2="36" y2="20" stroke="#D97757" stroke-width="2"/>
+    <text x="0" y="40" font-size="20" font-weight="700" fill="#EDEAE0">物理帧状态快照</text>
+  </g>
+
+  <g font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" text-rendering="geometricPrecision">
+    <text x="48" y="160" font-size="11" fill="#6B7280">帧 1</text>
+    <text x="48" y="214" font-size="11" fill="#6B7280">帧 2</text>
+    <text x="48" y="268" font-size="11" fill="#6B7280">帧 3</text>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision">
+
+    <g transform="translate(120 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=1</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">1</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">1</text><use href="#fsMHit" x="38" y="4" width="14" height="14"/></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsIdle)" stroke="#6B7280" stroke-width="1" stroke-dasharray="4 4"/></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsIdle)" stroke="#6B7280" stroke-width="1" stroke-dasharray="4 4"/></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#5B9BD5" text-anchor="middle">LOAD</text>
+    </g>
+
+    <g transform="translate(270 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=2</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">2</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">1</text></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">2</text><use href="#fsMHit" x="38" y="4" width="14" height="14"/></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsIdle)" stroke="#6B7280" stroke-width="1" stroke-dasharray="4 4"/></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#5B9BD5" text-anchor="middle">LOAD</text>
+    </g>
+
+    <g transform="translate(420 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=3</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">3</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">1</text></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">2</text></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">3</text><use href="#fsMHit" x="38" y="4" width="14" height="14"/></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#5B9BD5" text-anchor="middle">LOAD</text>
+    </g>
+
+    <g transform="translate(570 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=4</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsEvict)" stroke="#D97757" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">4</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsEvict)" stroke="#D97757" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">4</text><use href="#fsMEvict" x="38" y="4" width="14" height="14"/></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">2</text></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">3</text></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#D97757" text-anchor="middle">EVICT 1</text>
+    </g>
+
+    <g transform="translate(720 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=5</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">2</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">4</text></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsHit)" stroke="#5B9BD5" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">2</text><use href="#fsMHit" x="38" y="4" width="14" height="14"/></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">3</text></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#5B9BD5" text-anchor="middle">HIT</text>
+    </g>
+
+    <g transform="translate(870 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=6</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsEvict)" stroke="#D97757" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">1</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">4</text></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsEvict)" stroke="#D97757" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">1</text><use href="#fsMEvict" x="38" y="4" width="14" height="14"/></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">3</text></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#D97757" text-anchor="middle">EVICT 2</text>
+    </g>
+
+    <g transform="translate(1020 0)">
+      <text x="0" y="86" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle">t=7</text>
+      <rect x="-20" y="94" width="40" height="24" rx="6" fill="url(#fsEvict)" stroke="#D97757" stroke-width="1"/>
+      <text x="0" y="107" font-size="13" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">5</text>
+      <g transform="translate(-28 130)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">4</text></g>
+      <g transform="translate(-28 186)"><rect width="56" height="52" rx="10" fill="url(#fsRes)" stroke="#9CA3AF" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="500" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">1</text></g>
+      <g transform="translate(-28 242)"><rect width="56" height="52" rx="10" fill="url(#fsEvict)" stroke="#D97757" stroke-width="1"/><text x="28" y="26" font-size="22" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">5</text><use href="#fsMEvict" x="38" y="4" width="14" height="14"/></g>
+      <text x="0" y="306" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#D97757" text-anchor="middle">EVICT 3</text>
+    </g>
+  </g>
+</svg>

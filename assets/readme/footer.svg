@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" width="100%" role="img" aria-labelledby="ftTitle ftDesc">
+  <title id="ftTitle">README 视觉系统签名</title>
+  <desc id="ftDesc">README 视觉系统由 beautify-github-readme 与 design-taste-frontend 设计，项目采用 MIT 许可证。</desc>
+
+  <rect x="0" y="0" width="1200" height="100" rx="16" fill="#111827"/>
+  <line x1="48" y1="84" x2="88" y2="84" stroke="#D97757" stroke-width="2"/>
+
+  <g transform="translate(48 28)" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" text-rendering="geometricPrecision">
+    <text x="0" y="12" font-size="10" font-weight="500" letter-spacing="1.5" fill="#6B7280">README MADE WITH</text>
+    <text x="0" y="36" font-size="13" fill="#EDEAE0">beautify-github-readme  ·  design-taste-frontend</text>
+    <text x="0" y="56" font-size="10" fill="#6B7280">project-native visual system redesign</text>
+  </g>
+
+  <g transform="translate(1152 28)" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" text-rendering="geometricPrecision">
+    <text x="0" y="12" font-size="10" font-weight="500" letter-spacing="1.5" fill="#6B7280" text-anchor="end">LICENSE</text>
+    <text x="0" y="36" font-size="13" fill="#EDEAE0" text-anchor="end">MIT</text>
+    <text x="0" y="56" font-size="10" fill="#6B7280" text-anchor="end">liem0352 / page-replacement-algorithm</text>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="100%" role="img" aria-labelledby="saTitle saDesc">
+  <title id="saTitle">算法对比</title>
+  <desc id="saDesc">FIFO、LRU 与理论最优 OPT 三种页面置换算法的对比章节头。FIFO 按入队顺序淘汰，LRU 按最近访问时间淘汰，OPT 按未来最远使用淘汰。</desc>
+
+  <defs>
+    <linearGradient id="saFillFifo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="saFillLru" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5B9BD5" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#5B9BD5" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="saFillOpt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9CA3AF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#9CA3AF" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="140" rx="16" fill="#111827"/>
+
+  <g transform="translate(48 28)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision">
+    <text x="0" y="14" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="1.5" fill="#6B7280">ALGORITHM COMPARISON</text>
+    <line x1="0" y1="24" x2="36" y2="24" stroke="#D97757" stroke-width="2"/>
+    <text x="0" y="60" font-size="28" font-weight="700" fill="#EDEAE0">三种淘汰策略</text>
+    <text x="0" y="84" font-size="14" fill="#9CA3AF">FIFO · LRU · OPT - 不同的淘汰依据，不同的缺页率</text>
+  </g>
+
+  <g transform="translate(660 24)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision">
+    <g transform="translate(0 0)">
+      <rect x="0" y="0" width="160" height="92" rx="12" fill="url(#saFillFifo)" stroke="#374151" stroke-width="1"/>
+      <text x="16" y="28" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#D97757" letter-spacing="1">FIFO</text>
+      <text x="16" y="52" font-size="12" fill="#EDEAE0">先进先出</text>
+      <text x="16" y="74" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#6B7280">淘汰 队首</text>
+    </g>
+    <g transform="translate(176 0)">
+      <rect x="0" y="0" width="160" height="92" rx="12" fill="url(#saFillLru)" stroke="#374151" stroke-width="1"/>
+      <text x="16" y="28" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#5B9BD5" letter-spacing="1">LRU</text>
+      <text x="16" y="52" font-size="12" fill="#EDEAE0">最近最久未使用</text>
+      <text x="16" y="74" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#6B7280">淘汰 最旧时间戳</text>
+    </g>
+    <g transform="translate(352 0)">
+      <rect x="0" y="0" width="160" height="92" rx="12" fill="url(#saFillOpt)" stroke="#374151" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="16" y="28" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#9CA3AF" letter-spacing="1">OPT</text>
+      <text x="16" y="52" font-size="12" fill="#EDEAE0">理论最优</text>
+      <text x="16" y="74" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#6B7280">基准 不可实现</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" role="img" aria-labelledby="rfTitle rfDesc">
+  <title id="rfTitle">页面置换决策流程</title>
+  <desc id="rfDesc">页面置换决策流程图：访问页面后判断是否在内存，命中即返回（LRU 更新时间戳）；缺页时判断有无空闲帧，有则直接调入，无则按算法选择淘汰页后调入新页。</desc>
+
+  <defs>
+    <marker id="rfArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6B7280"/>
+    </marker>
+    <linearGradient id="rfBox" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="320" rx="20" fill="#111827"/>
+
+  <g transform="translate(48 30)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision">
+    <text x="0" y="12" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="1.5" fill="#6B7280">REPLACEMENT FLOW</text>
+    <line x1="0" y1="20" x2="36" y2="20" stroke="#D97757" stroke-width="2"/>
+    <text x="0" y="40" font-size="20" font-weight="700" fill="#EDEAE0">页面置换决策流程</text>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision" fill="none" stroke="#6B7280" stroke-width="1.5">
+    <polyline points="190,176 210,176" marker-end="url(#rfArrow)"/>
+    <polyline points="270,140 270,116 350,116" marker-end="url(#rfArrow)"/>
+    <polyline points="480,116 520,116" marker-end="url(#rfArrow)"/>
+    <polyline points="700,116 740,116" marker-end="url(#rfArrow)"/>
+    <polyline points="270,212 270,238 350,238" marker-end="url(#rfArrow)"/>
+    <polyline points="480,238 510,238" marker-end="url(#rfArrow)"/>
+    <polyline points="570,202 570,176 720,176" marker-end="url(#rfArrow)"/>
+    <polyline points="630,238 720,238" marker-end="url(#rfArrow)"/>
+    <polyline points="900,238 940,238" marker-end="url(#rfArrow)"/>
+    <polyline points="1020,212 1020,176 1030,176" marker-end="url(#rfArrow)"/>
+    <polyline points="860,176 950,176" marker-end="url(#rfArrow)"/>
+  </g>
+
+  <g font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" text-rendering="geometricPrecision" fill="#9CA3AF" font-size="10">
+    <text x="284" y="132">是</text>
+    <text x="284" y="226">否</text>
+    <text x="582" y="194">是</text>
+    <text x="668" y="230">否</text>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" text-rendering="geometricPrecision">
+
+    <g transform="translate(50 150)">
+      <rect width="140" height="52" rx="26" fill="url(#rfBox)" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="70" y="26" font-size="14" font-weight="600" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">访问页面 page</text>
+    </g>
+
+    <g transform="translate(270 176)">
+      <path d="M -60 0 L 0 -36 L 60 0 L 0 36 z" fill="url(#rfBox)" stroke="#374151" stroke-width="1"/>
+      <text x="0" y="0" font-size="13" font-weight="600" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">在内存中?</text>
+    </g>
+
+    <g transform="translate(350 90)">
+      <rect width="130" height="52" rx="10" fill="url(#rfBox)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="65" y="26" font-size="14" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">命中 HIT</text>
+    </g>
+
+    <g transform="translate(520 90)">
+      <rect width="180" height="52" rx="10" fill="url(#rfBox)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="90" y="26" font-size="13" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">更新时间戳 (LRU)</text>
+    </g>
+
+    <g transform="translate(740 98)">
+      <rect width="80" height="36" rx="18" fill="url(#rfBox)" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="40" y="18" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle" dominant-baseline="central">返回</text>
+    </g>
+
+    <g transform="translate(350 212)">
+      <rect width="130" height="52" rx="10" fill="url(#rfBox)" stroke="#D97757" stroke-width="1"/>
+      <text x="65" y="26" font-size="14" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">缺页 FAULT</text>
+    </g>
+
+    <g transform="translate(570 238)">
+      <path d="M -60 0 L 0 -36 L 60 0 L 0 36 z" fill="url(#rfBox)" stroke="#374151" stroke-width="1"/>
+      <text x="0" y="0" font-size="13" font-weight="600" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">有空闲帧?</text>
+    </g>
+
+    <g transform="translate(720 150)">
+      <rect width="140" height="52" rx="10" fill="url(#rfBox)" stroke="#5B9BD5" stroke-width="1"/>
+      <text x="70" y="26" font-size="13" font-weight="600" fill="#5B9BD5" text-anchor="middle" dominant-baseline="central">调入空闲帧</text>
+    </g>
+
+    <g transform="translate(720 212)">
+      <rect width="180" height="52" rx="10" fill="url(#rfBox)" stroke="#D97757" stroke-width="1"/>
+      <text x="90" y="26" font-size="13" font-weight="600" fill="#D97757" text-anchor="middle" dominant-baseline="central">按算法选淘汰页</text>
+    </g>
+    <text x="810" y="284" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="10" fill="#6B7280" text-anchor="middle">FIFO 队首 · LRU 最久未访问</text>
+
+    <g transform="translate(940 212)">
+      <rect width="160" height="52" rx="10" fill="url(#rfBox)" stroke="#D97757" stroke-width="1"/>
+      <text x="80" y="26" font-size="13" fill="#EDEAE0" text-anchor="middle" dominant-baseline="central">淘汰并调入新页</text>
+    </g>
+
+    <g transform="translate(950 158)">
+      <rect width="80" height="36" rx="18" fill="url(#rfBox)" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="40" y="18" font-family="ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace" font-size="12" fill="#9CA3AF" text-anchor="middle" dominant-baseline="central">完成</text>
+    </g>
+  </g>
+</svg>
